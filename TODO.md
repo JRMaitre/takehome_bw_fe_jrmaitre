@@ -1,2 +1,0 @@
-- add prettier
-- add styled component

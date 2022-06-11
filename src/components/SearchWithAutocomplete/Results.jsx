@@ -1,43 +1,10 @@
-import styled from "styled-components";
+import { ReactComponent as StarFilledIcon } from "../../icons/star-filled.svg";
+import { ReactComponent as StarEmptyIcon } from "../../icons/star-empty.svg";
+import { IconWrapper, ResultsList } from "./styles";
+import { AnimalRow } from "./AnimalRow";
+import { ProductRow } from "./ProductRow";
+import { CompanyRow } from "./CompanyRow";
 
-/**
- * Styled Components
- */
-const ResultsList = styled.ul`
-  display: block;
-
-  background: rgba(37, 39, 54, 1);
-  border: 1px solid rgba(54, 56, 74, 1);
-  border-radius: 8px;
-  color: white;
-  list-style: none;
-
-  padding: 8px;
-
-  > li {
-    height: 28px;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 4px;
-    padding-left: 8px;
-    text-align: left;
-  }
-
-  > li.highlighted {
-    background: rgba(119, 112, 255, 1);
-  }
-
-  > li:hover {
-    background: rgba(46, 47, 64, 1);
-    cursor: pointer;
-  }
-`;
-
-/**
- * A list of search results
- */
 export const Results = ({ results, onSelect, highlightedIndex }) => {
   if (!results || results.length === 0) {
     return null;
@@ -49,15 +16,23 @@ export const Results = ({ results, onSelect, highlightedIndex }) => {
 
   return (
     <ResultsList>
-      {results.map((result, index) => (
-        <li
-          key={result.value}
-          onClick={() => onSelect && onSelect(result)}
-          className={index === indexToUse ? "highlighted" : ""}
-        >
-          {result.text}
-        </li>
-      ))}
+      {results.map((result, index) => {
+        return (
+          <li
+            key={result.id}
+            onClick={() => onSelect && onSelect(result)}
+            className={index === indexToUse ? "highlighted" : ""}
+          >
+            <IconWrapper>
+              {result.starred ? <StarFilledIcon /> : <StarEmptyIcon />}
+            </IconWrapper>
+            {result.type === "animal" && <AnimalRow data={result} />}
+            {result.type === "company" && <CompanyRow data={result} />}
+            {result.type === "product" && <ProductRow data={result} />}
+            <span>{result.text}</span>
+          </li>
+        );
+      })}
     </ResultsList>
   );
 };

@@ -1,8 +1,8 @@
-# JR Maitre - Front-end exercise
+# fe-interview-backend
 
-This project includes my attempt at a front-end exercise. This feature allows user to search for any query and see data returned, corresponding to products, animals or companies. The user can then select results to "star" them. A counter at the top of the page indicates the total number of results that have been starred.
+This repository contains a local mock backend server for the brightwheel frontend coding challenge as well as an empty React app using `create-react-app`, which you should use as a starting point.
 
-## To Get started
+## Getting started
 
 Install project dependencies
 
