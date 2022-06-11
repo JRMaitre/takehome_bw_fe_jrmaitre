@@ -7,6 +7,7 @@ Callouts:
   - Styled component for styling as I feel it cleans up the JSX code and is straight-forward to use
   - Debounce hook to handle input and api searches in a way that doesn't spam our back-end
   - Prettier so basic code styling is enforced in the repo
+  - I used svg I found online for the search icon and stars in both states.
 
 What I didn't get a chance to work on.
 - Handling pagination. I had started with the idea of adding a Previous, Next and First and Last buttons for pagination at the end of the page, but didn't get enough time to implement it. 

@@ -18,7 +18,7 @@ export const StarrerContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  text-align: center;
   > * {
     margin-bottom: 16px;
   }
