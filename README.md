@@ -2,6 +2,8 @@
 
 This project includes my attempt at a front-end exercise. This feature allows user to search for any query and see data returned, corresponding to products, animals or companies. The user can then select results to "star" them. A counter at the top of the page indicates the total number of results that have been starred.
 
+https://user-images.githubusercontent.com/728171/173206027-f89617dc-900a-4a83-ab54-3c3f225b7c44.mov
+
 ## To Get started
 
 Install project dependencies
@@ -21,6 +23,9 @@ Or start the backend by itself
 ```
 yarn start:api
 ```
+
+
+
 
 This will create a locally hosted backend that you can access at `http://localhost:3001`
 
